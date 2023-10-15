@@ -1,6 +1,6 @@
 import { StyleSheet, Text, TouchableOpacity, View, Image, FlatList } from 'react-native'
 import React from 'react'
-import { useNavigation } from '@react-navigation/native';
+
 
 const ListCategory = ({navigation, route}: any) => {
     
@@ -17,7 +17,7 @@ const ListCategory = ({navigation, route}: any) => {
     const renderCategory = ({item}: any) => {
         return(
             <View style={styles.border}>
-                <TouchableOpacity onPress={() => navigation.navigate('Detail_Food')}>
+                
                 <View style={{alignItems: 'center', marginHorizontal:5}}>
                     <Image source={item.uri} 
                         style={{width: '100%', height: 300, borderTopLeftRadius: 10, borderTopRightRadius: 10}} 
@@ -31,11 +31,11 @@ const ListCategory = ({navigation, route}: any) => {
                 </View>
 
                 <View style={{paddingVertical: 15, alignItems: 'center'}}>
-                    <TouchableOpacity style={styles.TouchableHandle} >
+                    <TouchableOpacity style={styles.TouchableHandle}>
                         <Text style={styles.Text_Touchable}>Xem ngay</Text>
                     </TouchableOpacity>
                 </View>
-                </TouchableOpacity>
+                
             </View>
         )
     }

@@ -61,10 +61,10 @@ const DATA = [
     {
         title: 'ĐỒ UỐNG - TRÁNG MIỆNG',
         data:[
-            {id:1, name:'1 Bánh Trứng', detail:'1 Bánh Trứng', price:'', uri: require('../../assets/ThucDon/Drink/1-eggtart.jpg')},
-            {id:2, name:'2 Viên Khoai Môn Kim Sa', detail:'2 Viên Khoai Môn Kim Sa', price:'', uri: require('../../assets/ThucDon/Drink/2-taro.jpg')},
-            {id:3, name:'3 Thanh Bí Phô Mai', detail:'3 Thanh Bí Phô Mai', price:'', uri: require('../../assets/ThucDon/Drink/3-Pumcheese.jpg')},
-            {id:4, name:'5 Thanh Bí Phô Mai', detail:'5 Thanh Bí Phô Mai', price:'', uri: require('../../assets/ThucDon/Drink/5-Pumcheese.jpg')},
+            {id:1, name:'1 Bánh Trứng', detail:'1 Bánh Trứng', price:'15.000', uri: require('../../assets/ThucDon/Drink/1-eggtart.jpg')},
+            {id:2, name:'2 Viên Khoai Môn Kim Sa', detail:'2 Viên Khoai Môn Kim Sa', price:'24.000', uri: require('../../assets/ThucDon/Drink/2-taro.jpg')},
+            {id:3, name:'3 Thanh Bí Phô Mai', detail:'3 Thanh Bí Phô Mai', price:'30.000', uri: require('../../assets/ThucDon/Drink/3-Pumcheese.jpg')},
+            {id:4, name:'5 Thanh Bí Phô Mai', detail:'5 Thanh Bí Phô Mai', price:'45.000', uri: require('../../assets/ThucDon/Drink/5-Pumcheese.jpg')},
             {id:5, name:'7 UP', detail:'7 UP Lon', price:'18.000', uri: require('../../assets/ThucDon/Drink/7Up-Can.jpg')},
             {id:6, name:'Pepsi', detail:'Pepsi Lon', price:'18.000', uri: require('../../assets/ThucDon/Drink/Pepsi-Can.jpg')},
             {id:7, name:'Aquafina', detail:'Aquafina 500ml', price:'10.000', uri: require('../../assets/ThucDon/Drink/Aquafina-500ml.jpg')},
@@ -122,8 +122,8 @@ const ThucDon = ({navigation}: any) => {
                 <Image source={item.uri} style={styles.images} />
                   <View style={{ alignItems: 'flex-start', justifyContent: 'center', paddingLeft: 20, flex: 1}}>
                       <Text style={{fontSize: 23, fontWeight: '600', textAlign: 'left',}}>{item.name}</Text>
-                      <Text style={{fontSize: 17, marginBottom: 15}}>{item.detail}</Text>
-                      <Text style={{fontSize: 22, textAlign: 'right', fontWeight: '500'}}>{item.price} ₫</Text>
+                      <Text style={{fontSize: 17,marginVertical: 10}}>{item.detail}</Text>
+                      <Text style={{fontSize: 22, textAlign: 'right', fontWeight: '500', paddingLeft: 40}}>{item.price} ₫</Text>
                   </View>
                 </TouchableOpacity>
               </View>
@@ -140,9 +140,9 @@ export default ThucDon
 
 const styles = StyleSheet.create({
     container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
     },
     TouchableHandle: {
         // backgroundColor: '#f96163',
@@ -168,7 +168,7 @@ const styles = StyleSheet.create({
         borderRadius: 15
     },
     sectionlist: {
-        paddingHorizontal: 20,
+        paddingHorizontal: 8,
         flex: 1
     },
     border: {

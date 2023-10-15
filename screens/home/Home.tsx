@@ -1,12 +1,9 @@
 import React, { useState } from "react";
-import { View, Text, Button, StyleSheet, TouchableOpacity, ScrollView, Image, FlatList, Dimensions} from "react-native";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { View, Text, Button, StyleSheet, TouchableOpacity, ScrollView, Image, Dimensions} from "react-native";
 
-import { MaterialIcons, FontAwesome5 } from '@expo/vector-icons';
 import Header from "../../components/header/header";
 import ListCategory from "../../components/ListData/ListCategory";
 import Carsouse from "../../components/ListData/Carsouse";
-import DatHang from "./DatHang";
 import DatMua from "../../components/header/DatMua";
 import ListProduct from "../../components/ListData/ListProduct";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -15,6 +12,9 @@ import { StatusBar } from "expo-status-bar";
 // const Tab = createBottomTabNavigator();
 
 const Home = ({navigation}: any) => {
+    const screnWidth = Dimensions.get('screen').width
+    // console.log(screnWidth);
+    
     const [currentImage, setCurrentImage] = useState(0);
 
     const productData = [
@@ -43,7 +43,14 @@ const Home = ({navigation}: any) => {
         <Header style={styles.header}/>
         <ScrollView style={{flex: 1}}>
             <StatusBar/>
-            <DatMua/>
+            <View style={{justifyContent: 'center'}}>
+                <DatMua/>
+                <View style={{paddingVertical: 20, position: 'absolute', paddingTop: 140, paddingLeft: 80}}>
+                    <TouchableOpacity onPress={() => navigation.navigate('Dat_Hang')} style={styles.TouchableHandle}>
+                        <Text style={styles.Text_Touchable}>Bắt đầu đặt hàng ngay </Text>
+                    </TouchableOpacity>
+                </View>
+            </View>
             {/* Tạo nút ấn để chuyển tiếp hình ảnh.
             <View>
                 <Image source={images[currentImage]} style={styles.image} />
@@ -54,11 +61,12 @@ const Home = ({navigation}: any) => {
             </View>
              */}
             <View>
-
                 <Carsouse/>
             </View>
             <ListProduct/>
+            
             <ListCategory/>
+                
         </ScrollView>  
         {/* </SafeAreaView> */}
     </View>

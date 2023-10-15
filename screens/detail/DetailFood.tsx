@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View, Image, ScrollView, Modal, TextInput } from 'react-native'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { TouchableOpacity } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
@@ -10,6 +10,11 @@ const DetailFood = ({route, navigation}: any) => {
     const [isModal, setIsModal] = useState(false)
     const [qty, setQty] = useState('1')
 
+    useEffect(() => {
+        // Truyền các giá trị item qua route.params
+        navigation.setParams({ item });
+    }, [item]);
+
     const showModalDialog = () => {
         setIsModal(true)
     }
@@ -18,10 +23,17 @@ const DetailFood = ({route, navigation}: any) => {
         let total= parseInt(qty) +1;
         setQty(total.toString())
     }
-    const abtractQty = (qty: string) => {
-        let total = parseInt(qty) - 1;
-        setQty(total.toString())
+    const subtractQty = (qty: string) => {
+        let total = parseInt(qty);
+        
+        if (total < 1) {
+            setQty(total.toString())
+        } else if (total > 1) {
+            total = total -1;
+            setQty(total.toString())
+        }
     }
+
 
   return (
     <>
@@ -51,8 +63,11 @@ const DetailFood = ({route, navigation}: any) => {
         </View>
         
         <View style={{alignItems: 'center', padding: 20, backgroundColor: 'white'}}>
+            <View>
+                <Text style={{fontSize: 20, paddingVertical: 15, color: '#002795', fontWeight: '600'}}>Chọn số lượng cần mua</Text>
+            </View>
             <View style={{flexDirection: 'row', justifyContent: 'center', paddingBottom: 20}}>
-                <TouchableOpacity style={{paddingHorizontal: 30, paddingVertical: 20}} onPress={() => abtractQty(qty)}>
+                <TouchableOpacity style={{paddingHorizontal: 30, paddingVertical: 20}} onPress={() => subtractQty(qty)}>
                     <FontAwesome5 name="minus" size={24} color="black" />
                 </TouchableOpacity> 
 

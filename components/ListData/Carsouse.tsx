@@ -51,7 +51,7 @@ const Carsouse = () => {
     const renderItem = ({item, index}: any) => {
         return (
             <View>
-                <Image source={item.uri} style={{height: 350, width: screenWidth}}/>
+                <Image source={item.uri} style={{height: 450, width: screenWidth}}/>
             </View>
         )
     }
@@ -107,7 +107,7 @@ const Carsouse = () => {
             justifyContent: 'center', 
             position: 'absolute', 
             backgroundColor: 'transparent',
-            top: 335,
+            top: 425,
             left: screenWidth/3
             }}>
             {renderDotIndicators()}

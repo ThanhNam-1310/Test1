@@ -2,7 +2,7 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { FontAwesome5, MaterialIcons } from '@expo/vector-icons'
 
-const DatMua = () => {
+const DatMua = ({navigation}: any) => {
   return (
     <View style={styles.content_1}>
         <View style={{flexDirection: 'row', marginHorizontal: 15, paddingVertical: 25}}>
@@ -13,11 +13,6 @@ const DatMua = () => {
             <Text style={styles.text_content_1}>Mang đi </Text>
         </View>
 
-        <View style={{paddingVertical: 20}}>
-            <TouchableOpacity onPress={() => {}} style={styles.TouchableHandle}>
-                <Text style={styles.Text_Touchable}>Bắt đầu đặt hàng ngay </Text>
-            </TouchableOpacity>
-        </View>
     </View>
   )
 }

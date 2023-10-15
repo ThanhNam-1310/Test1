@@ -5,7 +5,6 @@ import ThucDon from '../screens/home/ThucDon';
 import GioHang from '../screens/home/GioHang';
 import AccountStack from './stacks/AccountStack';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { NavigationContainer } from '@react-navigation/native';
 import Home from '../screens/home/Home';
 
 const Tab = createBottomTabNavigator();
@@ -31,7 +30,7 @@ const TabNavigation = () => {
         return <Ionicons name={iconName} size={size=30} color={color}/>
       }
     })}>
-            <Tab.Screen name="Nha" component={Home} options={{headerShown: false, tabBarLabel: 'Nha',}} />
+            <Tab.Screen name="Nha" component={Home} options={{headerShown: false, tabBarLabel: 'Nha'}} />
             <Tab.Screen name="ThucDon" component={ThucDon} options={{headerShown: false,tabBarLabel: 'ThucDon'}}/>
             <Tab.Screen name="GioHang" component={GioHang} options={{headerShown: false, tabBarLabel: 'GioHang'}}/>
             <Tab.Screen name="Them" component={AccountStack} options={{headerShown: false, tabBarLabel: 'Them'}}/>
